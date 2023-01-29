@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div class="background-image">
+                <img src="./images/b1.png" alt="">
+                <h1>Women</h1>
+            </div>
+            <div class="background-image">
+                <img src="./images/b2.png" alt="">
+                <h1>Men</h1>
+            </div>
+            <div class="background-image">
+                <img src="./images/b3.png" alt="">
+                <h1>Kids</h1>
+            </div>
+            <div class="background-image">
+                <img src="./images/b4.png" alt="">
+                <h1>Beauty</h1>
+            </div>
+        </div><!--slider-->
+
+        <span id="pre" class="material-symbols-outlined" onclick="pre()">arrow_back_ios_new</span>
+        <span id="next" class="material-symbols-outlined" onclick="next()">arrow_forward_ios</span>
+    </div><!--slider-wrapper-->
+
+
+
+    <script>
+        var index = 0;
+        var slider = document.querySelector(".slider");
+        var childCount = slider.childElementCount;
+
+        function next() {
+            index++;
+
+            if(index > childCount - 1) {
+                index = 0;
+            }
+
+            slider.style.right = (index * 100) + "%";
+        }
+
+        function pre() {
+            index--;
+
+            if(index < 0) {
+                index = childCount - 1;
+            }
+
+            slider.style.right = (index * 100) + "%";
+        }
+
+        setInterval(() => {
+            next();
+        }, 5000);
+    </script>
+</body>
+</html>

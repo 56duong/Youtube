@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 0.875rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    padding: 20px;
+    background-color: #000;
+}
+
+header img {
+    display: block;
+    width: 8.33%;
+}
+
+.button {
+    padding: 8px 20px;
+    border: 1px solid #888;
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.red-button {
+    margin-right: 20px;
+    border: 1px solid #f40612;
+    background-color: #f40612;
+}
+
+.button:hover {
+    filter: brightness(80%);
+}
+
+.background-image {
+    background-image: url("../images/background.png");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.background-image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(0deg, #181818 10%, transparent);
+}
+
+.background-image .info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 41.66%;
+    height: 100%;
+    padding: 20px 80px;
+    color: #fff;
+    background: linear-gradient(90deg, #181818 10%, transparent);
+}
+
+.background-image .info img {
+    width: 100%;
+}
+
+.background-image .info > * {
+    margin: 10px 0;
+}
+
+.background-image .info span {
+    color: #a3a3a3;
+}
+
+.background-image .info .metadata > * {
+    margin-right: 10px;
+}
+
+.background-image .info .border {
+    padding: 2px 4px;
+    border: 1px solid #a3a3a3;
+}
+
+.background-image .info p {
+    line-height: 1.5rem;
+}
