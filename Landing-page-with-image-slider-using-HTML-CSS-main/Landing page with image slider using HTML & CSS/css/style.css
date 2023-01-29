@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #0065c3;
+    z-index: 999;
+}
+
+.logo {
+    width: 15%;
+}
+
+.logo img {
+    display: block;
+    width: 50px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+nav ul li a:hover {
+    color: #99C1E7;
+}
+
+.account {
+    width: 15%;
+    position: relative;
+    text-align: right;
+}
+
+.account:hover .account-panel {
+    display: block;
+}
+
+.account span {
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.account-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: calc(100% + 80px);
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.account-panel::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    border: 15px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.account-panel a {
+    border: 1px solid #0065c3;
+    border-radius: 20px;
+    padding: 8px 30px;
+    color: #fff;
+    background-color: #0065c3;
+    font-size: 16px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.account-panel a:hover {
+    color: #0065c3;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 300%; /*3 images => 300%*/
+    height: 100vh;
+    animation: slider 20s ease-in-out infinite;
+}
+
+@keyframes slider {
+    0% {
+        right: 0;
+    }
+    20% {
+        right: 0;
+    }
+    30% {
+        right: 100%;
+    }
+    50% {
+        right: 100%;
+    }
+    60% {
+        right: 200%;
+    }
+    80% {
+        right: 200%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.background-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateX(-10%);
+    color: #fff;
+    font-size: 40px;
+}
+
+.caption a {
+    padding: 8px 30px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.caption a:hover {
+    color: #0065c3;
+    background-color: #fff;
+}
