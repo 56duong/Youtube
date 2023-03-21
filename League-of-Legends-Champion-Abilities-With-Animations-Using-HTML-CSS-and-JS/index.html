@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AATROX - LOL Champion</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sec1">
+            <div class="background-image">
+                <img src="./images/background.png" alt="">
+                <div class="caption">
+                    <h5>THE DARKIN BLADE</h5>
+                    <h1>AATROX</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis temporibus cupiditate accusantium repellat recusandae, molestias tempora odit perferendis pariatur, excepturi quos dolor magnam expedita cumque! Officiis nihil debitis reprehenderit eligendi suscipit iure, deserunt labore ea fugiat earum ducimus provident voluptates? ... <a href="#">SEE MORE</a></p>
+                </div>
+            </div>
+        </div><!--sec1-->
+
+        <div class="sec2">
+            <div class="abilities-wrapper">
+                <div class="abilities">
+                    <h2>ABILITIES</h2>
+
+                    <div class="ability-list">
+                        <div id="p" class="ability-item active">
+                            <img src="./images/Aatrox_Passive.png" alt="">
+                        </div>
+                        <div id="q" class="ability-item">
+                            <img src="./images/AatroxQ.png" alt="">
+                        </div>
+                        <div id="w" class="ability-item">
+                            <img src="./images/AatroxW.png" alt="">
+                        </div>
+                        <div id="e" class="ability-item">
+                            <img src="./images/AatroxE.png" alt="">
+                        </div>
+                        <div id="r" class="ability-item">
+                            <img src="./images/AatroxR.png" alt="">
+                        </div>
+                    </div> 
+
+                    <div class="ability-info">
+                        <p class="ability-info-type">PASSIVE</p>
+                        <h6 class="ability-info-name">DEATHBRINGER STANCE</h6>
+                        <p class="ability-info-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore adipisci dolores perferendis fuga dolorum aliquam porro recusandae aut ullam provident.</p>
+                    </div>
+                </div><!--abilities-->
+
+                <video id="video" muted loop autoplay>
+                    <source src="./videos/ability_0266_P.webm" type="video/webm">
+                </video>
+            </div><!--abilities-wrapper-->
+        </div><!--sec2-->
+    </div><!--container-->
+
+
+
+    <script>
+        const abilities = {
+            "p" : ["ability_0266_P", "PASSIVE", "DEATHBRINGER STANCE", "Et amet ut accusam no erat et. Sit accusam at amet sadipscing magna aliquyam sed lorem. At sed duo dolor."],
+            "q" : ["ability_0266_Q", "Q", "THE DARKIN BLADE", "Pisan al el los borrachos bajo desnudo ansioso grupos donde. Las ni y los de. Entonces."],
+            "w" : ["ability_0266_W", "W", "INFERNAL CHAINS", "Plutonian grew muttered me thy nothing surely unto within quaint. Hear the the chamber what."],
+            "e" : ["ability_0266_E", "E", "UMBRAL DASH", "Dico sua che ancora se e fuor manifestamente di le. Convenevole al e colui le sí fallo."],
+            "r" : ["ability_0266_R", "R", "WORLD ENDER", "Blazon below might he sick native drugged, native in who the made by a.."]
+        }
+
+        document.querySelectorAll(".ability-item").forEach((e) => {
+            e.addEventListener("click", () => {
+                document.querySelectorAll(".ability-item").forEach((ele) => {
+                    ele.classList.remove("active");
+                })
+
+                e.classList.add("active");
+
+                document.getElementById("video").style = "opacity: 0";
+                document.querySelector(".ability-info").style = "opacity: 0";
+
+                setTimeout(() => {
+                    document.getElementById("video").src = "./videos/" + abilities[e.id][0] + ".webm";
+                    document.querySelector(".ability-info-type").innerHTML = abilities[e.id][1];
+                    document.querySelector(".ability-info-name").innerHTML = abilities[e.id][2];
+                    document.querySelector(".ability-info-desc").innerHTML = abilities[e.id][3];
+
+                    document.getElementById("video").style = "opacity: 1";
+                    document.querySelector(".ability-info").style = "opacity: 1";
+                }, 250)
+            })
+        })
+    </script>
+</body>
+</html>

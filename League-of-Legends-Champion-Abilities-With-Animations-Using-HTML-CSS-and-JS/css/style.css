@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    color: #ffffff;
+    background-color: #000913;
+}
+
+.sec1 {
+    margin-bottom: 80px;
+}
+
+.background-image {
+    position: relative;
+}
+
+.background-image img {
+    display: block;
+    width: 100%;
+}
+
+.background-image .caption {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 40%;
+    margin: auto;
+    padding: calc((100% - 1280px) / 2);
+    background-image: linear-gradient(to top, #000913, transparent);
+    text-align: center;
+}
+
+.background-image .caption h5 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 900;
+    font-family: serif;
+}
+
+.background-image .caption h1 {
+    margin-bottom: 20px;
+    font-size: 100px;
+    font-style: italic;
+    font-family: serif;
+}
+
+.background-image .caption p {
+    padding: 0 40px;
+}
+
+.background-image .caption a {
+    color: #d0a85c;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.sec2 {
+    padding: 80px 0;
+}
+
+.sec2 h2 {
+    max-width: calc(1024px / 2);
+    margin: auto;
+    padding: 20px;
+    font-size: 56px;
+    font-style: italic;
+    font-family: serif;
+}
+
+.sec2 .abilities-wrapper,
+.sec2 .ability-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec2 .abilities-wrapper > * {
+    min-width: 50%;
+}
+
+.sec2 .ability-list {
+    justify-content: flex-start;
+    padding: 0 calc((100% - (1024px / 2)) / 2);
+    border-bottom: 1px solid #394048;
+}
+
+.sec2 .ability-list .ability-item {
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.sec2 .ability-list .ability-item::before,
+.sec2 .ability-list .ability-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #394048;
+    transition: .25s;
+}
+
+.sec2 .ability-list .ability-item::after {
+    width: 2px;
+    height: 40px;
+    z-index: -1;
+}
+
+.sec2 .ability-list .ability-item.active::before,
+.sec2 .ability-list .ability-item:hover::before,
+.sec2 .ability-list .ability-item.active::after,
+.sec2 .ability-list .ability-item:hover::after {
+    background-color: #d0a85c;
+}
+
+.sec2 .ability-list .ability-item img {
+    padding: 5px;
+    border: 2px solid transparent;
+    transition: .25s;
+}
+
+.sec2 .ability-list .ability-item.active img,
+.sec2 .ability-list .ability-item:hover img {
+    transform: translateY(-10px);
+    border: 2px solid #d0a85c;
+}
+
+.ability-info {
+    max-width: calc(1024px / 2);
+    padding: 20px;
+    margin: auto;
+    transition: .25s;
+}
+
+.ability-info .ability-info-type {
+    color: #e7e7e7;
+    font-size: 10px;
+    font-family: serif;
+}
+
+.ability-info .ability-info-name {
+    margin: 5px 0;
+    font-size: 18px;
+    font-family: serif;
+}
+
+.abilities-wrapper video {
+    aspect-ratio: 16/9;
+    width: calc(1024px / 2);
+    max-width: calc(1024px / 2);
+    height: 100%;
+    margin: auto;
+    padding-right: 80px;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+}
+
+
+
